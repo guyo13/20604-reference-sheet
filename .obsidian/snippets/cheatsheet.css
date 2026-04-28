@@ -47,7 +47,7 @@
 
     .markdown-rendered ul,
     .markdown-rendered ol {
-        padding-inline-start: 10px !important;
+        padding-inline-start: 6px !important;
     }
 
     /* 5. Headers */

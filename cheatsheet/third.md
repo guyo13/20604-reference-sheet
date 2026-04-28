@@ -82,9 +82,6 @@ If you see these phrases on the exam, alarms should go off in your head:
 2. **$A_{TM} \in RE \setminus R$** (Halting Problem).
 3. **$\overline{A_{TM}} \in \text{co-}RE \setminus RE$** (Not even recognizable!).
 ---
-Here is the extraction of the Context-Free Grammar (CFG) logic from the third image, organized by the two main examples provided.
-
----
 
 ### XI. CFG: Prefix/Suffix Logic
 **Language:** $L = \{cw_1 \dots cw_k \mid k \ge 3, \exists i : \#_a(w_i) = 2\#_b(w_{i+2}) + 1\}$
@@ -109,3 +106,29 @@ Here is the extraction of the Context-Free Grammar (CFG) logic from the third im
 - **$W \rightarrow aW \mid bW \mid cW \mid \varepsilon$**  (Any string in $\{a, b, c\}^*$)
 - **$V \rightarrow aV \mid bV \mid \varepsilon$** (Free $a, b$ in $w_{k+2}$; no $c$'s)
 **Logic:** $P$ ensures $k \ge 2$ by generating at least $w_1$. $M$ recursively pairs any char in $w_k$ with a 'c' in $w_{k+2}$. $V$ allows non-'c' chars in $w_{k+2}$. Base of $M$ creates middle block $w_{k+1}$.
+---
+### XIII. CFG: Examples
+
+- **$L_1 = \{w \in \{a,b\}^* \mid \#_b(w)\text{mod } 3 = 1\}$**<br>$S \rightarrow aX \mid bS, \quad X \rightarrow aY \mid bX \mid \varepsilon, \quad Y \rightarrow aS \mid bY$
+- **$L_2 = \{a^n b^n \mid n \ge 0\}$**<br>$S \rightarrow aSb \mid \varepsilon$
+- **$L_4 = \{a^{3n} b^{n+1} \mid n \ge 0\}$**<br>$S \rightarrow aaaSb \mid b$
+- **$L_5 = \{a^m b^k \mid m > k\}$**<br>$S \rightarrow aSb \mid aS \mid a$
+- **$L_6 = \{a^m b^k \mid m \neq k\}$**<br>$S \rightarrow aSb \mid A \mid B, \quad A \rightarrow aA \mid a, \quad B \rightarrow bB \mid b$
+- **$L_7 = \{a^m b^k c^{2m+k} \mid m, k > 0\}$**<br>$S \rightarrow aScc \mid aXcc, \quad X \rightarrow bXc \mid bc$
+- **$L_8 = \{a^m b^{m-k} c^k \mid m > k\}$**<br>$S \rightarrow aSc \mid X, \quad X \rightarrow aXb \mid ab$
+- **$L_9 = \{a^m b^k \mid k \le m \le 3k\}$**<br>$S \rightarrow aSb \mid aaSb \mid aaaSb \mid \varepsilon$
+- **$L = \{a^m b^k \mid m, k \ge 0, m \le k \le 3m\}$**<br>$S \rightarrow aSb \mid aSbb \mid aSbbb \mid \varepsilon$
+- **$L_{10} = \{a^m b^k \mid k < m < 2k\}$**<br>$S \rightarrow aSb \mid aaSb \mid aaabb$
+- **$L_{11} = \{a^m b^m a^k b^k \mid m, k \ge 0\}$**<br>$S \rightarrow XX, \quad X \rightarrow aXb \mid \varepsilon$
+- **$L_{12} = \{a^m b^s c^k d^t \mid m+s = k+t\}$**<br>$S \rightarrow aSd \mid X \mid Y, \quad X \rightarrow aXc \mid Z, \quad Y \rightarrow bYd \mid Z, \quad Z \rightarrow bZc \mid \varepsilon$
+- **$L_{13} = \{a^m b^s c^k d^t \mid m+t = s+k\}$**<br>$S \rightarrow XY \mid MN, \quad M \rightarrow aXb \mid \varepsilon, \quad N \rightarrow bNd \mid Y, \quad Y \rightarrow cYd \mid \varepsilon, \quad X \rightarrow aXc \mid M$
+- **$L_{14} = \{w \in \{a, b\}^* \mid w^R = w\}$**<br>$S \rightarrow aSa \mid bSb \mid a \mid b \mid \varepsilon$
+- **$L_{15} = \{w \in \{a, b\}^* \mid w^R \neq w\}$**<br>$S \rightarrow aSa \mid bSb \mid aXb \mid bXa, \quad X \rightarrow aX \mid bX \mid \varepsilon$
+- **$L_{16} = \{w \in \{a, b\}^* \mid w^R = w, \#_a(w)\text{mod } 3 = 1\}$**<br>$S \rightarrow bSb \mid aXa \mid a, \quad X \rightarrow bXb \mid aYa, \quad Y \rightarrow bYb \mid aSa \mid b \mid \varepsilon$
+- **$L_{17} = \{w \in \{a, b\}^* \mid \#_a(w) = \#_b(w)\}$**<br>$S \rightarrow aSb \mid bSa \mid SS \mid \varepsilon$
+- **$L_{18} = \{w \in \{a, b\}^* \mid \#_a(w) = \#_b(w) + 1\}$**<br>$S \rightarrow XaX, \quad X \rightarrow aXbX \mid bXaX \mid \varepsilon$
+- **$L_{19} = \{w \in \{a, b\}^* \mid \#_a(w) = 2 \cdot \#_b(w)\}$**<br>$S \rightarrow aSaSbS \mid aSbSaS \mid bSaSaS \mid \varepsilon$
+- **$L = \overline{\{ww \mid w \in \{a, b\}^*\}}$**<br>$S \rightarrow S_1 \mid S_2, \quad S_1 \rightarrow TTS_1 \mid T, \quad S_2 \rightarrow XY \mid YX, \quad X \rightarrow TXT \mid a, \quad Y \rightarrow TYT \mid b, \quad T \rightarrow a \mid b$
+- **$L = \overline{\{a^n b^n c^n \mid n \ge 0\}}$**<br>$S \rightarrow S_1 \mid S_2 \mid S_3 \mid S_4 \mid S_5, \quad S_1 \rightarrow XbXaX, \quad X \rightarrow aX \mid bX \mid cX \mid \varepsilon, \quad S_4 \rightarrow MC, \quad M \rightarrow aMb \mid aA \mid bB, \quad A \rightarrow aA \mid \varepsilon, \quad B \rightarrow bB \mid \varepsilon, \quad C \rightarrow cC \mid \varepsilon$
+- **$L_{20} = \{a^m b^n c^p \mid m + 2n \ge p\}$**<br>$S \rightarrow aSc \mid aS \mid A, \quad A \rightarrow bAcc \mid bAc \mid bA \mid \varepsilon$
+- **$L_{21} = \{a^m b^n \mid 3m \le 5n \le 4m\}$**<br>$S \rightarrow a^4Ab^3 \mid a^3Ab^2 \mid a^7Ab^5 \mid a^6Ab^4 \mid A, \quad A \rightarrow a^5Ab^3 \mid a^5Ab^4 \mid \varepsilon$

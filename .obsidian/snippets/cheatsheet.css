@@ -3,9 +3,9 @@
 @media print {
     /* 1. Override Obsidian's internal spacing variables */
     body {
-        --p-spacing: 2px;
-        --heading-spacing: 3px;
-        --list-spacing: 1px;
+        --p-spacing: 0px;
+        --heading-spacing: 2px;
+        --list-spacing: 0px;
         --table-cell-padding: 2px 3px;
         --line-height-normal: 1.2;
         --line-height-tight: 1.15;
@@ -38,8 +38,8 @@
     .markdown-rendered ul, 
     .markdown-rendered ol, 
     .markdown-rendered li {
-        margin-block-start: 1px !important;
-        margin-block-end: 1px !important;
+        margin-block-start: 0 !important;
+        margin-block-end: 0 !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
         line-height: var(--line-height-normal) !important;
@@ -47,7 +47,7 @@
 
     .markdown-rendered ul,
     .markdown-rendered ol {
-        padding-inline-start: 16px !important;
+        padding-inline-start: 10px !important;
     }
 
     /* 5. Headers */

@@ -1,0 +1,114 @@
+/* Cheatsheet 3-Column Landscape Print Snippet for Obsidian */
+
+@media print {
+    /* 1. Override Obsidian's internal spacing variables */
+    body {
+        --p-spacing: 2px;
+        --heading-spacing: 3px;
+        --list-spacing: 1px;
+        --table-cell-padding: 2px 3px;
+        --line-height-normal: 1.2;
+        --line-height-tight: 1.15;
+        --font-text-size: 11px !important; /* Legible base font */
+        --font-smaller: 9px !important;
+    }
+
+    @page {
+        size: A4 landscape;
+        margin: 5mm; /* Maximize usable paper space */
+    }
+
+    /* 2. Remove all outer container paddings */
+    .print .markdown-preview-view {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Three-Column Layout */
+    .markdown-rendered {
+        column-count: 3;
+        column-gap: 5mm;
+        column-rule: none; /* No vertical lines */
+        font-family: Arial, sans-serif;
+        font-size: var(--font-text-size) !important;
+    }
+
+    /* 4. Aggressively strip margins from blocks */
+    .markdown-rendered p, 
+    .markdown-rendered ul, 
+    .markdown-rendered ol, 
+    .markdown-rendered li {
+        margin-block-start: 1px !important;
+        margin-block-end: 1px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        line-height: var(--line-height-normal) !important;
+    }
+
+    .markdown-rendered ul,
+    .markdown-rendered ol {
+        padding-inline-start: 16px !important;
+    }
+
+    /* 5. Headers */
+    .markdown-rendered h1 {
+        column-span: all;
+        background: none !important;
+        border-top: 1.5px solid black;
+        border-bottom: 1.5px solid black;
+        margin-top: 4px !important;
+        margin-bottom: 4px !important;
+        padding: 2px 0 !important;
+        font-size: 14px !important;
+        text-align: left;
+    }
+
+    .markdown-rendered h2, 
+    .markdown-rendered h3, 
+    .markdown-rendered h4 {
+        margin-top: 4px !important;
+        margin-bottom: 2px !important;
+        font-size: 12px !important;
+    }
+
+    /* 6. Tables */
+    .markdown-rendered table {
+        width: 100%;
+        margin: 0 0 3px 0 !important;
+        border-collapse: collapse;
+    }
+
+    .markdown-rendered th, 
+    .markdown-rendered td {
+        padding: var(--table-cell-padding) !important;
+        border: 1px solid #777;
+        font-size: 10px !important;
+        line-height: 1.15 !important;
+    }
+
+    /* 7. Horizontal Rules and Images */
+    .markdown-rendered hr {
+        border: none;
+        border-top: 1px solid black;
+        margin: 3px 0 !important;
+    }
+
+    .markdown-rendered img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 2px auto !important;
+    }
+
+    /* 8. Math elements */
+    .MathJax {
+        font-size: 11px !important;
+    }
+
+    /* Prevent awkward page/column breaks inside specific elements only */
+    .markdown-rendered table,
+    .markdown-rendered img {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

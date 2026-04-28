@@ -10,4 +10,4 @@ node preRenderMath.js
 
 ### דף נוסחאות
 
-[https://github.com/adielbm/20604/blob/main/cheatsheet/cheatsheet.pdf](https://github.com/adielbm/20604/blob/main/cheatsheet/cheatsheet.pdf)
+[https://github.com/guyo13/20604-reference-sheet/blob/main/cheatsheet/cheatsheet.pdf](https://github.com/guyo13/20604-reference-sheet/blob/main/cheatsheet/cheatsheet.pdf)

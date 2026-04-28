@@ -1,7 +1,3 @@
-## $\quad\quad\quad\quad\large{\text{{\Large{C}}HEAT {\Large{S}}HEET:} \text{{\Large{ C}}OMPUTATIONAL {\Large{M}}ODELS }\texttt{(20604)}}\quad$ https://github.com/adielbm/20604
-
-
-
 |                    | $\overline{\text{REG}}$ | $\text{REG}$ | $\text{CFL}$ | $\tiny{\text{DEC.}}$ | $\tiny{\text{REC.}}$ | $\text{P}$ | $\text{NP}$ | $\text{NPC}$ |
 | ------------------ | ----------------------- | ------------ | ------------ | -------------------- | -------------------- | ---------- | ----------- | ------------ |
 | $L_{1}\cup L_{2}$  | **no**                  | ✓            | ✓            | ✓                    | ✓                    | ✓          | ✓           | **no**       |
